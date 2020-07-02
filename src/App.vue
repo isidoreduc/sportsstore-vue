@@ -1,17 +1,16 @@
 <template>
-  <div id="app">
-    <h4>sportsstore</h4>
-  </div>
+  <store />
 </template>
 
 <script>
+import Store from './components/Store';
 
 export default {
   name: 'App',
   components: {
-    
-  }
-}
+    Store,
+  },
+};
 </script>
 
 <style>
