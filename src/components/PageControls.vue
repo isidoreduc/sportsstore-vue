@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row" v-if="pageCount > 1">
         <div class="col form-group q-ml-xs">
             <select class="form-control select" v-on:change="changePageSize">
                 <option value="4">4 per page</option>
@@ -8,7 +8,7 @@
             </select>
         </div>
 
-        <div v-if="pageCount > 1" class="col text-right">
+        <div class="col text-right">
             <q-btn-group>
                 <q-btn
                     v-for="i in pageNumbers"

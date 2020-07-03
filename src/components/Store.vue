@@ -2,16 +2,16 @@
   <div class="q-pa-md q-gutter-sm">
     <q-toolbar class="bg-primary text-white">
       <q-btn flat round dense icon="menu" class="q-mr-sm" />
-      <q-toolbar-title shrink>SPORTS STORE</q-toolbar-title>
+      <q-toolbar-title shrink class='absolute-center'>SPORTS STORE</q-toolbar-title>
       <q-space></q-space>
       <q-btn flat round dense icon="whatshot" />
     </q-toolbar>
 
     <div class="row">
-      <div class="col-3 bg-dark q-pa-sm">
-        <h4 class="text-white q-ma-sm">Categories</h4>
+      <div  class="col-3 bg-blue-1 q-pa-md">
+        <category-controls />
       </div>
-      <div class="col-9 q-pa-sm">
+      <div class="col-9">
         <product-list />
       </div>
     </div>
@@ -20,9 +20,11 @@
 
 <script>
 import ProductList from './ProductList';
+import CategoryControls from "./CategoryControls"
+
 export default {
   components: {
-    ProductList,
+    ProductList, CategoryControls
   },
 };
 </script>
