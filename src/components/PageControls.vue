@@ -8,7 +8,7 @@
             </select>
         </div>
 
-        <div class="col text-right">
+        <div class="col text-right q-pa-md">
             <q-btn-group>
                 <q-btn
                     v-for="i in pageNumbers"
@@ -46,6 +46,7 @@
 
 <style lang="scss" scoped>
     .select {
+        margin-left: 10px;
         padding: 0.5rem;
         border-radius: 1rem;
         outline: none;

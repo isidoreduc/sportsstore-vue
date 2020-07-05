@@ -1,15 +1,16 @@
 <template>
-    <div class="q-pa-md q-gutter-sm">
-        <q-toolbar class="bg-primary text-white">
-            <q-toolbar-title shrink class="absolute-center"
-                >SHOPPING CART</q-toolbar-title
-            >
-        </q-toolbar>
+    <div>
+        <navbar title="SHOPPING CART" />
     </div>
 </template>
 
 <script>
-    export default {};
+    import Navbar from './Navbar';
+    export default {
+        components: {
+            Navbar,
+        },
+    };
 </script>
 
 <style lang="scss" scoped></style>
