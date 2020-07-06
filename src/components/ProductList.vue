@@ -14,8 +14,15 @@
                         {{ item.price | currency }}
                     </q-chip>
                 </div>
-                <q-card-section>
+                <q-card-section class="q-ma-sm">
                     {{ item.description }}
+                    <q-btn
+                        outline
+                        class=" float-right"
+                        v-on:click="handleProductAdd(item)"
+                    >
+                        Add To Cart
+                    </q-btn>
                 </q-card-section>
             </q-card>
         </div>
@@ -24,13 +31,13 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
+    import { mapGetters, mapMutations } from 'vuex';
     import PageControls from './PageControls';
 
     export default {
         components: { PageControls },
         computed: {
-            ...mapGetters({products: "processedProducts"}),
+            ...mapGetters({ products: 'processedProducts' }),
         },
         filters: {
             currency(value) {
@@ -38,6 +45,13 @@
                     style: 'currency',
                     currency: 'USD',
                 }).format(value);
+            },
+        },
+        methods: {
+            ...mapMutations({ addProduct: 'cart/addProduct' }),
+            handleProductAdd(product) {
+                this.addProduct(product);
+                this.$router.push('/cart');
             },
         },
     };
